@@ -15,8 +15,9 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # Tweet Dadjoke
+timer = 15 * 60 # Turn to seconds (15 mins)
 while True:
     joke = icanhazdad()
     api.update_status(joke)
     print(joke)
-    time.sleep(900)     # Timer 
+    time.sleep(timer)
